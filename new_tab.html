@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Bookmarks</title>
+    <!-- FIX: Added 'css/' prefix to all stylesheet paths -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Visual Bookmarks</h1>
+        
+        <button id="settings-btn" class="settings-btn" title="Settings">⚙️</button>
+        
+        <div class="google-search">
+            <input type="text" id="google-search" placeholder="Search Google or type a URL" autocomplete="off">
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search bookmarks...">
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="favorites">⭐ Favorites</button>
+            <button class="tab" data-tab="all">📚 All Bookmarks</button>
+            <button class="tab" data-tab="folders">📁 Folders</button>
+            <button class="tab" data-tab="reading">📖 Reading List</button>
+        </div>
+        
+        <div id="favorites" class="section active">
+            <div id="favorites-grid" class="grid"></div>
+        </div>
+        
+        <div id="all" class="section">
+            <div id="all-grid" class="grid"></div>
+        </div>
+        
+        <div id="folders" class="section">
+            <div id="folders-grid" class="grid"></div>
+        </div>
+        
+        <div id="folder-view" class="section">
+            <button id="back-btn" class="back-btn">← Back to Folders</button>
+            <h2 id="folder-title"></h2>
+            <div id="folder-bookmarks-grid" class="grid"></div>
+        </div>
+        
+        <div id="reading" class="section">
+            <div id="reading-grid" class="reading-list-grid"></div>
+        </div>
+        
+        <button id="add-btn" class="add-btn">+</button>
+    </div>
+    
+    <!-- Add Bookmark Modal -->
+    <div id="bookmark-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="bookmark-modal-title">Add Bookmark</h2>
+            <form id="bookmark-form">
+                <input type="hidden" id="bookmark-id">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="bookmark-name" required placeholder="Enter bookmark name">
+                </div>
+                <div class="form-group">
+                    <label>URL</label>
+                    <input type="url" id="bookmark-url" required placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label>Folder</label>
+                    <select id="bookmark-folder">
+                        <option value="">Choose a folder...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="bookmark-favorite">
+                        <label for="bookmark-favorite">Add to favorites</label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="bookmark-cancel-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Bookmark</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Create Folder Modal -->
+    <div id="folder-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create New Folder</h2>
+            <form id="folder-form">
+                <div class="form-group">
+                    <label>Folder Name</label>
+                    <input type="text" id="folder-name" required placeholder="Enter folder name">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="folder-cancel-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Folder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="settings-section">
+                <h3>Theme</h3>
+                <div class="theme-options">
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="dark-modern">
+                        <span class="theme-preview dark-modern"></span>
+                        Dark Modern
+                    </label>
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="midnight-purple">
+                        <span class="theme-preview midnight-purple"></span>
+                        Midnight Purple
+                    </label>
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="forest-green">
+                        <span class="theme-preview forest-green"></span>
+                        Forest Green
+                    </label>
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="sunset-orange">
+                        <span class="theme-preview sunset-orange"></span>
+                        Sunset Orange
+                    </label>
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="arctic-blue">
+                        <span class="theme-preview arctic-blue"></span>
+                        Arctic Blue
+                    </label>
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="minimal-light">
+                        <span class="theme-preview minimal-light"></span>
+                        Minimal Light
+                    </label>
+                </div>
+            </div>
+            <div class="settings-section">
+                <h3>Font</h3>
+                <div class="form-group">
+                    <select id="font-family">
+                        <option value="system">System Default</option>
+                        <option value="poppins">Poppins</option>
+                        <option value="inter">Inter</option>
+                        <option value="roboto">Roboto</option>
+                        <option value="open-sans">Open Sans</option>
+                        <option value="source-sans">Source Sans Pro</option>
+                        <option value="lato">Lato</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Font Size</label>
+                    <input type="range" id="font-size" min="14" max="20" value="16">
+                    <span id="font-size-value">16px</span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="settings-cancel-btn" class="btn btn-secondary">Cancel</button>
+                <button type="button" id="settings-save-btn" class="btn btn-primary">Save Settings</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

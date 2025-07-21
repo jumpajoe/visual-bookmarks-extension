@@ -1,0 +1,320 @@
+/* Responsive design and media queries */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tab {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+    
+    .add-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .clock-widget {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .clock-widget .time {
+        font-size: 1.2rem;
+    }
+    
+    .clock-widget .date {
+        font-size: 0.8rem;
+    }
+    
+    .settings-btn {
+        top: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+    
+    .google-search {
+        margin-bottom: 0.5rem;
+    }
+    
+    .google-search input {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .search-box input {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.9rem;
+    }
+    
+    .bookmark-card {
+        padding: 1.25rem;
+        min-height: 140px;
+    }
+    
+    .bookmark-favicon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .bookmark-name {
+        font-size: 0.9rem;
+    }
+    
+    .bookmark-url {
+        font-size: 0.75rem;
+    }
+    
+    .folder-card {
+        padding: 1.5rem 1rem;
+        min-height: 140px;
+    }
+    
+    .folder-name {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .folder-count {
+        font-size: 0.8rem;
+    }
+    
+    .create-folder-card {
+        padding: 1.5rem 1rem;
+        min-height: 140px;
+    }
+    
+    .create-folder-icon {
+        font-size: 1.75rem;
+    }
+    
+    .reading-item {
+        padding: 1.25rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .reading-favicon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .reading-title {
+        font-size: 0.9rem;
+    }
+    
+    .reading-url {
+        font-size: 0.75rem;
+    }
+    
+    .theme-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .theme-option {
+        padding: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .bookmark-card {
+        padding: 1rem;
+        min-height: 120px;
+    }
+    
+    .bookmark-favicon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .bookmark-name {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .bookmark-url {
+        font-size: 0.7rem;
+    }
+    
+    .folder-card, .create-folder-card {
+        padding: 1.25rem 0.75rem;
+        min-height: 120px;
+    }
+    
+    .folder-name {
+        font-size: 1.1rem;
+    }
+    
+    .clock-widget {
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .clock-widget .time {
+        font-size: 1.1rem;
+    }
+    
+    .clock-widget .date {
+        font-size: 0.75rem;
+    }
+    
+    .settings-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .add-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+    
+    .google-search input, .search-box input {
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .form-group input, .form-group select {
+        padding: 0.625rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+    
+    .bookmark-card {
+        padding: 2rem 1.75rem;
+        min-height: 180px;
+    }
+    
+    .bookmark-favicon {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .bookmark-name {
+        font-size: 1.1rem;
+    }
+    
+    .folder-card, .create-folder-card {
+        padding: 2.5rem 2rem;
+        min-height: 180px;
+    }
+    
+    .folder-name {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+    [data-theme="minimal-light"] {
+        --bg-primary: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        --bg-card: rgba(255,255,255,0.05);
+        --bg-card-hover: rgba(255,255,255,0.08);
+        --bg-modal: #1f2937;
+        --bg-input: #374151;
+        --bg-input-focus: #4b5563;
+        --border-color: rgba(255,255,255,0.1);
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-muted: #9ca3af;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bookmark-card, .folder-card, .reading-item {
+        border-width: 2px;
+    }
+    
+    .bookmark-actions {
+        opacity: 1;
+    }
+    
+    .action-btn {
+        border: 1px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+    
+    .bookmark-card:hover, .folder-card:hover {
+        transform: none;
+    }
+    
+    .settings-btn:hover, .add-btn:hover {
+        transform: none;
+    }
+}

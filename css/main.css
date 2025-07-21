@@ -1,0 +1,63 @@
+/* Main styles and CSS variables */
+:root {
+    --bg-primary: linear-gradient(135deg, #374151 0%, #111827 100%);
+    --bg-card: rgba(59,130,246,0.08);
+    --bg-card-hover: rgba(59,130,246,0.12);
+    --bg-modal: #1f2937;
+    --bg-input: #374151;
+    --bg-input-focus: #4b5563;
+    --border-color: rgba(59,130,246,0.15);
+    --border-hover: rgba(6,182,212,0.3);
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --accent-primary: #06b6d4;
+    --accent-hover: #0891b2;
+    --accent-shadow: rgba(6,182,212,0.3);
+    --folder-bg: rgba(6,182,212,0.1);
+    --folder-border: rgba(6,182,212,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: var(--font-size, 16px);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}

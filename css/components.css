@@ -1,0 +1,469 @@
+/* Component styles - buttons, cards, modals, etc. */
+
+/* Clock Widget */
+.clock-widget {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    color: var(--text-primary);
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.clock-widget:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.clock-widget .time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--accent-primary);
+}
+
+.clock-widget .date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Settings Button */
+.settings-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.settings-btn:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Search Components */
+.google-search {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.google-search input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    font-size: 1rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.google-search input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-shadow);
+    background: var(--bg-card-hover);
+}
+
+.google-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-box {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.95rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Navigation Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tab:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+}
+
+.tab.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+    box-shadow: 0 4px 12px var(--accent-shadow);
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 400px;
+    width: 100%;
+}
+
+/* Bookmark Cards */
+.bookmark-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 160px;
+    cursor: grab;
+    user-select: none;
+}
+
+.bookmark-card:active {
+    cursor: grabbing;
+}
+
+.bookmark-card.dragging {
+    opacity: 0.5;
+    transform: rotate(5deg);
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.bookmark-card.drag-over {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+    transform: scale(1.02);
+}
+
+.bookmark-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.bookmark-favicon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.1);
+    object-fit: cover;
+}
+
+.bookmark-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    word-break: break-word;
+    color: var(--text-primary);
+}
+
+.bookmark-url {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.bookmark-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bookmark-card:hover .bookmark-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(0,0,0,0.9);
+    transform: scale(1.05);
+}
+
+/* Folder Cards */
+.folder-card {
+    background: var(--folder-bg);
+    border: 1px solid var(--folder-border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 160px;
+    justify-content: center;
+}
+
+.folder-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.folder-name {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-primary);
+    line-height: 1.2;
+}
+
+.folder-count {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.create-folder-card {
+    background: rgba(34,197,94,0.1);
+    border: 2px dashed rgba(34,197,94,0.3);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    color: #22c55e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 160px;
+    justify-content: center;
+}
+
+.create-folder-card:hover {
+    background: rgba(34,197,94,0.15);
+    border-color: rgba(34,197,94,0.5);
+    transform: translateY(-2px);
+}
+
+.create-folder-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Reading List */
+.reading-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.reading-item {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.reading-item:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.reading-favicon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.reading-content {
+    flex: 1;
+}
+
+.reading-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.reading-url {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.reading-actions {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reading-item:hover .reading-actions {
+    opacity: 1;
+}
+
+/* Add Button */
+.add-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px var(--accent-shadow);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.add-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px var(--accent-shadow);
+}
+
+/* Back Button */
+.back-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+}
+
+#folder-title {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    grid-column: 1 / -1;
+}
+
+.empty-state h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.empty-state p {
+    font-size: 1rem;
+    line-height: 1.5;
+}

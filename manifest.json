@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Visual Bookmarks",
+  "version": "1.0",
+  "description": "Visual bookmark manager for new tab page",
+  "permissions": [
+    "storage",
+    "bookmarks",
+    "readingList"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "new_tab.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
